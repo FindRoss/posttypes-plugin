@@ -2,7 +2,7 @@
 /*
  * Plugin Name:  RF Custom Post Types and Taxonomies
  * Description: A WordPress plugin that adds custom post types and taxonomies to BitcoinChaser.
- * Version: 3.07
+ * Version: 3.08
  * Author: Ross Findlay
  * Author URI: https://bitcoinchaser.com
  */
@@ -253,19 +253,46 @@ function rf_review_type_taxonomy() {
 }
 add_action( 'init', 'rf_review_type_taxonomy' );
 
-function bc_feature_taxonomy() {
+// function bc_feature_taxonomy() {
+//   $labels = array(
+//     'name'              => 'Features',
+//     'singular_name'     => 'Feature',
+//     'search_items'      => 'Search Features',
+//     'all_items'         => 'All Features',
+//     'parent_item'       => 'Parent Feature',
+//     'parent_item_colon' => 'Parent Feature:',
+//     'edit_item'         => 'Edit Feature',
+//     'update_item'       => 'Update Feature',
+//     'add_new_item'      => 'Add New Feature',
+//     'new_item_name'     => 'New Feature Name',
+//     'menu_name'         => 'Features',
+//   );
+//   $args = array(
+//     'hierarchical'      => true,
+//     'labels'            => $labels,
+//     'show_ui'           => true,
+//     'show_admin_column' => true,
+//     'show_in_rest'      => true,
+//     'query_var'         => true,
+//     'rewrite'           => array( 'slug' => 'feature' ),
+//   );
+//   register_taxonomy( 'feature', array( 'review' ), $args );  
+// }
+// add_action( 'init', 'bc_feature_taxonomy' );
+
+function bc_license_taxonomy() {
   $labels = array(
-    'name'              => 'Features',
-    'singular_name'     => 'Feature',
-    'search_items'      => 'Search Features',
-    'all_items'         => 'All Features',
-    'parent_item'       => 'Parent Feature',
-    'parent_item_colon' => 'Parent Feature:',
-    'edit_item'         => 'Edit Feature',
-    'update_item'       => 'Update Feature',
-    'add_new_item'      => 'Add New Feature',
-    'new_item_name'     => 'New Feature Name',
-    'menu_name'         => 'Features',
+    'name'              => 'Licenses',
+    'singular_name'     => 'License',
+    'search_items'      => 'Search Licenses',
+    'all_items'         => 'All Licenses',
+    'parent_item'       => 'Parent License',
+    'parent_item_colon' => 'Parent License:',
+    'edit_item'         => 'Edit License',
+    'update_item'       => 'Update License',
+    'add_new_item'      => 'Add New License',
+    'new_item_name'     => 'New License Name',
+    'menu_name'         => 'Licenses',
   );
   $args = array(
     'hierarchical'      => true,
@@ -274,11 +301,11 @@ function bc_feature_taxonomy() {
     'show_admin_column' => true,
     'show_in_rest'      => true,
     'query_var'         => true,
-    'rewrite'           => array( 'slug' => 'feature' ),
+    'rewrite'           => array( 'slug' => 'license' ),
   );
-  register_taxonomy( 'feature', array( 'review' ), $args );  
+  register_taxonomy( 'license', array( 'review' ), $args );  
 }
-add_action( 'init', 'bc_feature_taxonomy' );
+add_action( 'init', 'bc_license_taxonomy' );
 
 function bc_cryptocurrency_taxonomy() {
   $labels = array(
